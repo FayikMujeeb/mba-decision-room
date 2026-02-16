@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The MBA Decision Room | Live AMAs with India's Top MBA Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A3D62;
+            --primary-light: #1E5A7D;
+            --accent: #F39C12;
+            --accent-hover: #E67E22;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --gray: #6C757D;
+            --success: #27AE60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--dark);
+            background: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 80px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(243, 156, 18, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .mentor-badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .mentor-badge h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .mentor-badge p {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.9;
+        }
+
+        /* Lead Form */
+        .lead-form {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(10, 61, 98, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+
+        .lead-form h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .form-subtitle {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #E0E0E0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(10, 61, 98, 0.1);
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 18px 32px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(243, 156, 18, 0.4);
+        }
+
+        .price-tag {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--success);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* Decision Rooms */
+        .rooms-section {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .room-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .room-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            transition: all 0.6s ease;
+        }
+
+        .room-card:hover::before {
+            top: -30%;
+            right: -30%;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(10, 61, 98, 0.3);
+        }
+
+        .room-card.locked {
+            background: linear-gradient(135deg, #95A5A6 0%, #7F8C8D 100%);
+            filter: grayscale(0.3);
+        }
+
+        .room-week {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .room-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.3;
+            position: relative;
+            z-index: 1;
+        }
+
+        .room-details {
+            list-style: none;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+
+        .room-details li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .room-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .room-mentor {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+
+        .lock-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        /* For You Section */
+        .for-you-section {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .for-you-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .for-you-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .for-you-card:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .for-you-card::before {
+            content: '✓';
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .for-you-card p {
+            font-size: 1.05rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Toolkit Section */
+        .toolkit-section {
+            padding: 100px 20px;
+            background: white;
+        }
+
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .toolkit-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--light);
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toolkit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .toolkit-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .toolkit-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .toolkit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .toolkit-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .toolkit-item p {
+            color: var(--gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Outcomes Section */
+        .outcomes-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+
+        .outcomes-section .section-title {
+            color: white;
+        }
+
+        .outcomes-section .section-title::after {
+            background: var(--accent);
+        }
+
+        .outcomes-list {
+            max-width: 900px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .outcomes-list li {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        .outcomes-list li:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .outcomes-note {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .limited-seats {
+            background: rgba(243, 156, 18, 0.2);
+            border: 2px solid var(--accent);
+            padding: 20px 30px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+
+        /* Why Different Section */
+        .why-different-section {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .why-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .why-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .why-card p {
+            color: var(--gray);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .why-card blockquote {
+            margin-top: 15px;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent);
+            font-style: italic;
+            color: var(--dark);
+        }
+
+        .why-closing {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #1A1A2E 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            padding: 22px 60px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 40px rgba(243, 156, 18, 0.4);
+        }
+
+        .final-cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(243, 156, 18, 0.5);
+        }
+
+        .final-note {
+            margin-top: 40px;
+            font-size: 1.1rem;
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .rooms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .toolkit-grid,
+            .why-grid,
+            .for-you-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Lead Form -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>THE MBA DECISION ROOM</h1>
+                <p class="hero-tagline">Series of Live AMAs with India's top MBA experts</p>
+                
+                <div class="mentor-badge">
+                    <h3>Mentor: Arun Sharma</h3>
+                    <p>IIM-B alumnus • Entrepreneur • Educator • Best-Selling CAT Author</p>
+                </div>
+            </div>
+
+            <div class="lead-form">
+                <h3>Secure Your Spot</h3>
+                <p class="form-subtitle">Join India's top MBA experts for personalized guidance</p>
+                
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="stage">Where are you in your MBA journey? *</label>
+                        <select id="stage" name="stage" required>
+                            <option value="">Select your stage</option>
+                            <option value="deciding">Deciding whether to pursue MBA</option>
+                            <option value="preparing">Preparing for entrance exams</option>
+                            <option value="got-results">Got exam results, selecting colleges</option>
+                            <option value="interviews">Preparing for interviews (PI/GD/WAT)</option>
+                            <option value="financing">Deciding on financing options</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">Register Now</button>
+                    <p class="price-tag">Just ₹49</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 4 MBA Decision Rooms -->
+    <section class="rooms-section">
+        <div class="container">
+            <h2 class="section-title">The 4 MBA Decision Rooms</h2>
+            
+            <div class="rooms-grid">
+                <!-- Week 1 - Active -->
+                <div class="room-card">
+                    <span class="room-week">Week 1</span>
+                    <h3 class="room-title">How to Get the Best Possible MBA College With Your Score</h3>
+                    <ul class="room-details">
+                        <li>Whether your dream college is within your reach</li>
+                        <li>How institutes actually shortlist beyond just scores</li>
+                        <li>How to identify the best ROI colleges for you</li>
+                        <li>Smart shortlisting of college vs random form filling</li>
+                        <li>Live profile evaluations for your case</li>
+                        <li>How to pay the fees and manage loan EMIs</li>
+                    </ul>
+                    <div class="room-mentor">
+                        <strong>Mentor:</strong> Arun Sharma<br>
+                        IIM-B alumnus • Best-Selling CAT Author
+                    </div>
+                </div>
+
+                <!-- Week 2 - Locked -->
+                <div class="room-card locked">
+                    <span class="lock-badge">Unlocking Soon</span>
+                    <span class="room-week">Week 2</span>
+                    <h3 class="room-title">Making the Right MBA Choice</h3>
+                    <ul class="room-details">
+                        <li>Just take the college you have or try one more year</li>
+                        <li>Wait for your dream specialisation or compromise</li>
+                        <li>MBA from India or Abroad</li>
+                        <li>Executive MBA vs regular MBA vs PGDM</li>
+                        <li>High fees private college or low fees government college</li>
+                        <li>College in hometown or a Metro city with high expenses</li>
+                    </ul>
+                </div>
+
+                <!-- Week 3 - Locked -->
+                <div class="room-card locked">
+                    <span class="lock-badge">Unlocking Soon</span>
+                    <span class="room-week">Week 3</span>
+                    <h3 class="room-title">How to Convert Your Best MBA Call (PI, GD, WAT)</h3>
+                    <ul class="room-details">
+                        <li>What interviewers actually assess</li>
+                        <li>How different colleges assess candidates differently</li>
+                        <li>Mistakes even toppers make in interviews</li>
+                        <li>Common questions asked and their answers</li>
+                        <li>Handling low academics, gaps, or weak profiles confidently</li>
+                        <li>What to do when you don't know an answer</li>
+                        <li>How to structure strong GD and WAT responses</li>
+                        <li>Live breakdown of person specific questions</li>
+                    </ul>
+                </div>
+
+                <!-- Week 4 - Locked -->
+                <div class="room-card locked">
+                    <span class="lock-badge">Unlocking Soon</span>
+                    <span class="room-week">Week 4</span>
+                    <h3 class="room-title">How to Pay for Your MBA Without Burdening Your Future</h3>
+                    <ul class="room-details">
+                        <li>Is this college really worth so many lakhs?</li>
+                        <li>What kind of salary can you expect after MBA?</li>
+                        <li>How long will it actually take to recover your fees?</li>
+                        <li>How to finance your MBA without burdening your parents</li>
+                        <li>Loan vs using family savings, what makes more sense for you?</li>
+                        <li>What happens if placements are lower than promised?</li>
+                        <li>Understanding loans, EMIs and repayment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Is This For You? -->
+    <section class="for-you-section">
+        <div class="container">
+            <h2 class="section-title">Is This For You?</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px; color: var(--gray);">
+                Absolutely yes if you're:
+            </p>
+            
+            <div class="for-you-grid">
+                <div class="for-you-card">
+                    <p>Deciding on which colleges you should target</p>
+                </div>
+                <div class="for-you-card">
+                    <p>Unsure on whether to accept your current calls or repeat a year</p>
+                </div>
+                <div class="for-you-card">
+                    <p>Confused on the real difference between MBA and PGDM</p>
+                </div>
+                <div class="for-you-card">
+                    <p>Deciding between MBA in India or Abroad</p>
+                </div>
+                <div class="for-you-card">
+                    <p>Not fully confident about converting your PI / GD / WAT</p>
+                </div>
+                <div class="for-you-card">
+                    <p>Doubting whether the college fees is worth the ROI</p>
+                </div>
+                <div class="for-you-card">
+                    <p>Not sure how to deal with Education Loan options</p>
+                </div>
+                <div class="for-you-card">
+                    <p>No clue how education loans and financing options work for MBA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The MBA Decision Toolkit -->
+    <section class="toolkit-section">
+        <div class="container">
+            <h2 class="section-title">The MBA Decision Toolkit</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 50px; color: var(--gray); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Inside The MBA Decision Room, you get access to structured tools designed specifically for your MBA decision.
+            </p>
+            
+            <div class="toolkit-grid">
+                <div class="toolkit-item">
+                    <div class="toolkit-icon">📊</div>
+                    <h3>MBA ROI Calculator</h3>
+                    <p>Know exactly what your MBA could return. Because spending that high fees for a college without knowing the payback math isn't smart.</p>
+                </div>
+                
+                <div class="toolkit-item">
+                    <div class="toolkit-icon">🎯</div>
+                    <h3>Specialization Fit Assessment</h3>
+                    <p>A 10-question evaluation aligned to your goals and risk appetite, to know your recommended specialization track.</p>
+                </div>
+                
+                <div class="toolkit-item">
+                    <div class="toolkit-icon">⚖️</div>
+                    <h3>College Comparison Tool</h3>
+                    <p>Compare up to 3 B-schools side-by-side strategically across Fees, Placements, ROI potential and Peer benchmarks.</p>
+                </div>
+                
+                <div class="toolkit-item">
+                    <div class="toolkit-icon">💰</div>
+                    <h3>EMI Affordability Checker</h3>
+                    <p>Input your expected salary and monthly lifestyle costs to know your comfortable EMI range before you take that loan for MBA fees.</p>
+                </div>
+                
+                <div class="toolkit-item">
+                    <div class="toolkit-icon">✅</div>
+                    <h3>Interview Prep Scorecard</h3>
+                    <p>Assess your real potential. Get a personalized readiness insight so you know how to prepare smarter for your admission interview.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Walk Away With -->
+    <section class="outcomes-section">
+        <div class="container">
+            <h2 class="section-title">What You'll Walk Away With</h2>
+            
+            <ul class="outcomes-list">
+                <li>A realistic list of colleges you can get admission in</li>
+                <li>Clarity on how to compare colleges strategically</li>
+                <li>An understanding of whether you should take admission or wait for another year</li>
+                <li>A smarter approach to decision making based on fees vs placement</li>
+                <li>Awareness of how colleges evaluate you for admission</li>
+                <li>A practical view of whether the fees of your target colleges make sense for you</li>
+            </ul>
+            
+            <p class="outcomes-note">
+                Make your MBA decision with expert-led confidence and not confusion.
+            </p>
+            
+            <div class="limited-seats">
+                To keep the discussion focused and personalized, the room will be closed after limited registrations.
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Isn't Just Another MBA Advice -->
+    <section class="why-different-section">
+        <div class="container">
+            <h2 class="section-title">Why This Isn't Just Another MBA Advice</h2>
+            
+            <div class="why-intro">
+                There's no shortage of MBA information and advice online and offline.<br>
+                What's missing is <strong>guidance</strong> to make the right decision.
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>It's interactive.</h3>
+                    <blockquote>You're asking your specific question and getting an answer that works for you.</blockquote>
+                </div>
+                
+                <div class="why-card">
+                    <h3>It's for the decision stage.</h3>
+                    <blockquote>Specifically built for the time when you're choosing between colleges, repeats, and heavy fees commitments.</blockquote>
+                </div>
+                
+                <div class="why-card">
+                    <h3>It's structured.</h3>
+                    <blockquote>Instead of piecing together information from multiple sources, you move through a 4-week guided decision journey.</blockquote>
+                </div>
+                
+                <div class="why-card">
+                    <h3>It covers the full decision spectrum.</h3>
+                    <blockquote>Right from college selection, accept or repeat, converting calls in hand, and paying responsibly.</blockquote>
+                </div>
+                
+                <div class="why-card">
+                    <h3>It's a multi-expert room</h3>
+                    <blockquote>You're not hearing a single biased opinion. Instead, there are multiple experienced mentors, different perspectives, and insights shaped by hundreds of real MBA outcomes.</blockquote>
+                </div>
+            </div>
+            
+            <p class="why-closing">
+                You're not just consuming another load of information; you're making a decision with experts guiding you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Before You Accept. Before You Repeat.<br>Before You Borrow.</h2>
+            <p>Enter The MBA Decision Room.</p>
+            <a href="#registrationForm" class="final-cta-button">Register for just ₹49</a>
+            <p class="final-note">See you inside The MBA Decision Room.</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                stage: document.getElementById('stage').value
+            };
+            
+            // Here you would typically send this to your backend
+            console.log('Form submitted:', formData);
+            
+            // Show success message (customize this part)
+            alert('Thank you for registering! You will receive confirmation details via email shortly.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.room-card, .toolkit-item, .why-card, .for-you-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
